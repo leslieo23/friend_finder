@@ -1,7 +1,7 @@
 var surveyArray=[
 {
   name:"leslie",
-  photo:"https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-0/p206x206/10425094_10152887767131972_5805795254064850025_n.jpg?oh=1a41c9ad4d04ea5c55a51db5822c8a03&oe=57B0A090",
+  photo:"https://media.licdn.com/media/p/4/005/09c/25c/3bce1a9.jpg",
   scores:
      1,
      2,
