@@ -172,7 +172,7 @@
 	        <h2 class="modal-title"><strong>Best Match</strong></h2>
 	      </div>
 	      <div class="modal-body">
-	        <h2 id="Name"></h2>
+	        <h2 id="Name">Leslie</h2>
 	        <img id="Image" src="https://media.licdn.com/media/p/4/005/09c/25c/3bce1a9.jpg" alt="">
 	      </div>
 	      <div class="modal-footer">
@@ -189,15 +189,29 @@
 				name:$('name').val(),
 				photo:$('photo').val(),
 				scores:[$('#q1').val(),$('#q2').val(),$('#q3').val,$('#q4').val(),$('#q5').val(),$('#q6').val(),$('#q7').val(),$('#q8').val,$('#q9').val(),$('#q10').val(),]
-			}
+			};
+			
+			console.log(inputData);
+			
 			var URL=window.location.origin
 
 			$.post(URL + "/api/friends",inputData,function(data){
+				for(i=0;i< inputData.length;i++){
+					console.log(inputData[i].scores);
 				$('#Name').text(data.name);
 				$('#Image').attr('src',data.photo);
 				$('#resultsModal').modal('toggle');
 
-			})
+			}
+		  })
 		})
+		function friendsData(){
+			var URL= window.location.origin;
+			$.ajax({ url: URL +'/api/friends',method:'GET'})
+			.done (function(data){
+				console.log("URL: "+ URL + "/api/friends")
+				console.log(data)
+			});
+		}
 	</script>
 	</html>
